@@ -4,7 +4,7 @@
     class AjaxController{
 
         public function addAction(){
-            $model = new Comments();
+           /* $model = new Comments();
 
             $model->load($_POST);
 
@@ -41,7 +41,7 @@ HERE;
                 echo json_encode(['errors' => $error_html]);
             }
 
-            return false;
+            return false;*/
         }
 
 
