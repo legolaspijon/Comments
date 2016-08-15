@@ -1,9 +1,7 @@
 <?php
 
-/*
- * Возвращает массив с роутами
- * */
-
 return array(
-    '' => "site/index",
+    // list of aliases
+    "main" => "site/index",
+    "example" => "site/index",
 );

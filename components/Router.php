@@ -19,13 +19,18 @@ class Router
         $file = ROOT . "/controllers/$controller.php";
 
         if (file_exists($file)) {
-            require_once $file;
+            require $file;
         } else {
             PageError::error404();
             return false;
         }
 
         $controllerObj = new $controller();
+        if (!method_exists($controllerObj, $action)) {
+            PageError::error404();
+            return false;
+        }
+
         call_user_func_array(array($controllerObj, $action), $param);
 
         return true;
@@ -43,15 +48,19 @@ class Router
     private function getSegments($url)
     {
         if (empty($url)) {
-            $controller = 'SiteController';
-            $action = 'indexAction';
-            $param = [];
+            $url = 'site/index';
         } else {
-            $segments = explode('/', $url);
-            $controller = ucfirst(array_shift($segments)) . 'Controller';
-            $action = array_shift($segments) . 'Action';
-            $param = $segments;
+            foreach($this->routes as $pattern => $alias){
+                if(preg_match("~^$pattern$~", $url)){
+                    $url = preg_replace("~$pattern~", $alias, $url);
+                    break;
+                }
+            }
         }
+        $segments = explode('/', $url);
+        $controller = ucfirst(array_shift($segments)) . 'Controller';
+        $action = array_shift($segments) . 'Action';
+        $param = $segments;
 
         return [$controller, $action, $param];
     }
