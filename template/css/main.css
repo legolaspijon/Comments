@@ -1,0 +1,139 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+}
+.comment-form{
+    display: none;
+    margin-top: 25px;
+}
+
+.comment-form table tr td:first-child {
+    text-align: right;
+    padding-right: 5px;
+    width: 60%;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+}
+
+.comments-container, .comment{
+    margin:0 auto;
+    width: 60%;
+}
+
+#comments{
+    list-style: none;
+    padding-left: 0;
+}
+
+.comments-item{
+    margin-top:15px;
+    border-left: 1px solid #efefef;
+    min-height: 35px;
+}
+
+
+#reply_comments{
+    list-style: none;
+    padding-left: 15px;
+    border-left: 1px dashed transparent
+}
+
+#reply_comments:hover{
+    border-left: 1px dashed #9fffe9;
+}
+
+.comment-title h5{
+    font-family: tahoma, sans-serif;
+    font-size: 17px;
+    background: #f5fdfa;
+    padding: 3px 12px;
+}
+
+.comment-title{
+    padding-left: 6px;
+}
+
+.comment-title span{
+    font-size: 13px;
+    color: #959595;
+}
+
+.comment-body{
+    padding-left:10px;
+    text-align: justify;
+    min-height: 30px;
+}
+
+.comment-footer{
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.comment-footer span{
+    color: #8e9591;
+}
+
+.comment-time{
+    float: right;
+}
+
+.wrapper{
+
+    position: relative;
+    min-height: 100%;
+}
+
+hr.hr-dashed{
+    background-color: #fff;
+    border-top: 1px dashed #8c8b8b;
+    width: 2%;
+}
+
+.reply{
+    cursor: pointer;
+    border-bottom: 1px dashed #428bca;
+    color: #428bca;
+}
+
+.reply:hover{
+    text-decoration: none;
+    color: #000;
+    border-color: #000;
+}
+
+.new_comment{
+    border-left: 5px solid rgba(14, 165, 33, 0.45);
+}
+
+.form-group .button{
+    padding: 3px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    display: block;
+    float: left;
+    border-bottom: none;
+    min-width: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-group .button:hover {
+    background: #dad7d7;
+}
+
+#panel>div:after {
+    clear: both;
+    display: block;
+    content: "";
+}
+
+#panel>textarea{
+    border-radius: 0 0 4px 4px;
+
+}
