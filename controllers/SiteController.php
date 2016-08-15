@@ -12,18 +12,18 @@ class SiteController
 
     }
 
-    public function fileAction($id){
+/*    public function fileAction($id){
         $model = new Comments();
         $comment = $model->getById($id);
 
         if(preg_match('/.txt$/iu', $comment->filename)){
-            echo $model->getPlain();
+            $text = $model->getPlain();
         } else {
-            $model->getImg();
+            $image = $model->getImg();
         }
         
         require_once '/views/site/file.php';
-    }
+    }*/
 
     public function ajaxAction()
     {
